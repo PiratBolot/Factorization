@@ -117,7 +117,7 @@ void Factorizator::optimization() {
     int i = 0;
     size_t vectorSize = factors.size();
     while (naiveFactorization(static_cast<uint64_t>(factors[i].second)) && i < factors.size()) {
-        for (size_t j = factors.size(); j > vectorSize; --j) {
+        for (size_t j = factors.size() - 1; j > vectorSize; --j) {
             factors[j].first *= factors[i].first;
         }
         vectorSize = factors.size();
